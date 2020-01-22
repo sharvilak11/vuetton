@@ -1,0 +1,24 @@
+{
+  "name": "vuetton",
+  "version": "0.0.1",
+  "description": "A Simple Button component in Vue which supports disabling during asynchronous operations, customisation, size-color variations and much more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharvilak11/vuetton.git"
+  },
+  "keywords": [
+    "Vue",
+    "Button",
+    "UI"
+  ],
+  "author": "sharvilakt@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharvilak11/vuetton/issues"
+  },
+  "homepage": "https://github.com/sharvilak11/vuetton#readme"
+}
