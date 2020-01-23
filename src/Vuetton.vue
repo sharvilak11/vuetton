@@ -1,5 +1,10 @@
 <template>
-    <button class="btn" :class="['btn-'+size, 'btn-'+type, customClass, isLoading ? 'btn-loader': '' ]" :disabled="isLoading || disabled" @click="callAction" :style="backgroundColor" ref="button">
+    <button class="btn" :class="['btn-'+size, customClass, isLoading ? 'btn-loader': '']"
+            :disabled="isLoading || disabled"
+            @click="callAction"
+            :style="backgroundColor"
+            ref="button"
+    >
         <span class="icon" v-if="$slots.default && !isLoading">
             <slot></slot>
         </span>
@@ -16,8 +21,7 @@ export default {
     name: 'Vuetton',
     props: {
         action: {
-            type: Function,
-            required: true
+            type: Function
         },
         async: {
             type: Boolean,
@@ -49,12 +53,6 @@ export default {
         text: {
             type: String,
             required: true
-        },
-        type: {
-            type: String,
-            validator: (value) => {
-                return ['danger','success','warning', 'info', 'primary','secondary','ternary'].indexOf(value) > -1 || !value;
-            }
         }
     },
     data() {
@@ -94,7 +92,7 @@ export default {
             if (this.loaderImage) {
                 return require(this.loaderImage);
             }
-            return require('../assets/loader.svg');
+            return require('./assets/loader.svg');
         }
     },
     created() {
@@ -114,7 +112,7 @@ export default {
 
 <style scoped>
     .btn {
-        color: #fff;
+        color: #000;
         padding: 12px 16px;
         border-radius: 4px;
         border: none;

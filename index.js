@@ -1,3 +1,3 @@
-import Vuetton from './component/Vuetton';
+import Vuetton from './src/Vuetton';
 
 export default Vuetton;
