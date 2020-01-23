@@ -1,5 +1,5 @@
 <template>
-    <button class="btn" :class="['btn-'+size, customClass, isLoading ? 'btn-loader': '']"
+    <button :type="type" class="btn" :class="['btn-'+size, customClass, isLoading ? 'btn-loader': '']"
             :disabled="isLoading || disabled"
             @click="callAction"
             :style="backgroundColor"
@@ -53,6 +53,10 @@ export default {
         text: {
             type: String,
             required: true
+        },
+        type: {
+            type: String,
+            default: 'button'
         }
     },
     data() {
