@@ -4,6 +4,8 @@ Vuetton is a simple library which lets you configure your button in the most fea
 
 [https://www.npmjs.com/package/vuetton](https://www.npmjs.com/package/vuetton)
 
+![](./src/assets/sample.gif)
+
 ## Installation via npm
 
 ```bash
