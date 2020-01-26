@@ -53,7 +53,7 @@ import Vuetton from 'vuetton';
 Any custom class can be attached to the button through `custom-class` prop
 
 ```vue
-<Vuetton size="lg" type="button" text="lg" :action="fetchTasks" custom-class="bg--red text--white"Fetch></Vuetton>
+<Vuetton size="lg" type="button" text="lg" :action="fetchTasks" custom-class="bg--red text--white">Fetch</Vuetton>
 ```
 
 ### Asynchronous support
