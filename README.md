@@ -24,7 +24,7 @@ Below are the options which can be used in order to customise the button as per 
 |disabled | `Boolean` | If this property is true, then the particular button will be disabled.| 
 |loader-text|`String`| This property accepts text which will be loaded during an asynchronous call.|
 |loader-image|`String`| This property accepts path of an image which will be loaded during an asynchronous call.|
-|size|`String`| This property determines the size of a button; possible values taken are ```lg```,```md```, ```sm``` and ```x-sm```. If not provided, default size i.e medium is rendered.|
+|size|`String`| This property determines the size of a button; possible values taken are ```lg```,```md```, ```sm``` and ```xs```. If not provided, default size i.e medium is rendered.|
 |text|`String`| This is a required property which defines a value.|  
 |type|`String`| This property determines the usage of button; possible values used are ```submit```,```button``` ```reset```.|
 
@@ -38,8 +38,41 @@ import Vuetton from 'vuetton';
 ```
 * Use in your template
 ```vue
-<Vuetton size="lg" type="button" text="lg" :action="fetchTasks"></Vuetton>
+<Vuetton size="lg" type="button" text="lg" :action="fetchTasks">Fetch</Vuetton>
 ```
+
+### Size variations
+
+`lg` - Large
+`md` - Medium (default)
+`sm` - Small
+`xs` - Extra small
+
+### Customization via CSS
+
+Any custom class can be attached to the button through `custom-class` prop
+
+```vue
+<Vuetton size="lg" type="button" text="lg" :action="fetchTasks" custom-class="bg--red text--white"Fetch></Vuetton>
+```
+
+### Asynchronous support
+
+Component supports asynchronous methods during which button would remain disabled till the function completes its execution.
+
+Keeping the prop `async="true"` will make sure button remains disabled during the function provided in onclick listener.
+
+To add the text during async call, pass the prop `loader-text`.
+
+To change the default loader image, pass the prop `loader-image` which must be an image path.
+
+```vue
+<Vuetton size="md" text="Fetch" :async="true" :action="fetchTasks" loader-text="Loading..."></Vuetton>
+```
+
+### Type
+
+You can specify the type of button via type prop be it, `button`, `reset`, `submit`. `type="button"` will be the default behaviour if not provided.
 
 * More Features are coming soon
 * Documentation link is coming soon 
