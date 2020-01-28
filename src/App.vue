@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Vuetton text="Sample" custom-class="primary" hover-class="primary-hover"></Vuetton>
+    <Vuetton text="Sample" custom-class="primary" :ripple="true" color="#d21211"></Vuetton>
   </div>
 </template>
 

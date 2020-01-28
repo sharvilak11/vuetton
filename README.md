@@ -27,6 +27,7 @@ Below are the options which can be used in order to customise the button as per 
 |size|`String`| This property determines the size of a button; possible values taken are ```lg```,```md```, ```sm``` and ```xs```. If not provided, default size i.e medium is rendered.|
 |text|`String`| This is a required property which defines a value.|  
 |type|`String`| This property determines the usage of button; possible values used are ```submit```,```button``` ```reset```.|
+|ripple|`Boolean`| This property adds a ripple effect on clicking on the button.|
 
 
 ## Usage
@@ -53,7 +54,7 @@ import Vuetton from 'vuetton';
 Any custom class can be attached to the button through `custom-class` prop
 
 ```vue
-<Vuetton size="lg" type="button" text="lg" :action="fetchTasks" custom-class="bg--red text--white">Fetch</Vuetton>
+<Vuetton size="lg" type="button" text="Submit" :action="submitData" custom-class="bg--red text--white"></Vuetton>
 ```
 
 ### Asynchronous support
@@ -67,7 +68,7 @@ To add the text during async call, pass the prop `loader-text`.
 To change the default loader image, pass the prop `loader-image` which must be an image path.
 
 ```vue
-<Vuetton size="md" text="Fetch" :async="true" :action="fetchTasks" loader-text="Loading..."></Vuetton>
+<Vuetton size="md" text="Submit" :async="true" :action="submitData" loader-text="Submitting..."></Vuetton>
 ```
 
 ### Type
