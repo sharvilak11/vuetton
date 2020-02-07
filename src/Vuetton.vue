@@ -2,6 +2,7 @@
     <button :type="type" class="btn" :class="['btn-'+size, customClass, isLoading ? 'btn-loader': '', {'ripple': ripple}]"
             :disabled="isLoading || disabled"
             @click="callAction"
+            v-on="$listeners"
             :style="backgroundColor"
             ref="button"
     >
@@ -90,6 +91,18 @@ export default {
             }
         }
     },
+    created() {
+        this.$set(this.actions, 'click', () => {
+            return new Promise(async (resolve, reject)=> {
+                try {
+                    await this.action();
+                    resolve();
+                } catch (err) {
+                    return reject(err);
+                }
+            });
+        });
+    },
     computed: {
         backgroundColor() {
             if (this.color) {
@@ -105,18 +118,6 @@ export default {
             }
             return require('./assets/loader.svg');
         }
-    },
-    created() {
-        this.$set(this.actions, 'click', () => {
-            return new Promise(async (resolve, reject)=> {
-                try {
-                    await this.action();
-                    resolve();
-                } catch (err) {
-                    return reject(err);
-                }
-            });
-        });
     }
 };
 </script>
