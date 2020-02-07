@@ -29,6 +29,10 @@ Below are the options which can be used in order to customise the button as per 
 |type|`String`| This property determines the usage of button; possible values used are ```submit```,```button``` ```reset```.|
 |ripple|`Boolean`| This property adds a ripple effect on clicking on the button.|
 
+## Events
+- Use any event directly on the component and the same will be propogated to the actual button.
+- Special case in terms of `:async=true` - where `action` prop is mandatory which will be called on `click` event in order to show the loading animation and track the asynchronous call. 
+
 
 ## Usage
 
@@ -39,7 +43,7 @@ import Vuetton from 'vuetton';
 ```
 * Use in your template
 ```vue
-<Vuetton size="lg" type="button" text="lg" :action="fetchTasks">Fetch</Vuetton>
+<Vuetton size="lg" type="button" text="lg" :async="true" :action="submitData"></Vuetton>
 ```
 
 ### Size variations
@@ -74,6 +78,23 @@ To change the default loader image, pass the prop `loader-image` which must be a
 ### Type
 
 You can specify the type of button via type prop be it, `button`, `reset`, `submit`. `type="button"` will be the default behaviour if not provided.
+
+### Event Listeners
+
+You can use all the button listener events on the Vuetton component and pass on the methods.
+```vue
+<Vuetton size="md" text="Submit" @mouseover="doSomething" @blur="removeSomething"></Vuetton>
+```
+
+### Slot for icon
+
+Default slot takes elements or anything which will be rendered on the button before the button's text.
+
+```vue
+<Vuetton size="md" text="Submit" @mouseover="doSomething" @blur="removeSomething">
+    <i class="material-icons">save</i>
+</Vuetton>
+```
 
 * More Features are coming soon
 * Documentation link is coming soon 

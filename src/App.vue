@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Vuetton text="Sample" custom-class="primary" :ripple="true" color="#d21211"></Vuetton>
+    <Vuetton text="Sample" custom-class="primary" :ripple="true" color="#d21211" :action="callAction" v-on:mouseover="callAction"></Vuetton>
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   name: 'app',
   components: {
     Vuetton,
+  },
+  methods: {
+    callAction() {
+      alert('Hello');
+    }
   }
 }
 </script>
