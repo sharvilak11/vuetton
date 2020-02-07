@@ -29,6 +29,7 @@ Below are the options which can be used in order to customise the button as per 
 |type|`String`| This property determines the usage of button; possible values used are ```submit```,```button``` ```reset```.|
 |ripple|`Boolean`| This property adds a ripple effect on clicking on the button.|
 
+## Events
 - Use any event directly on the component and the same will be propogated to the actual button.
 - Special case in terms of `:async=true` - where `action` prop is mandatory which will be called on `click` event in order to show the loading animation and track the asynchronous call. 
 
@@ -78,7 +79,7 @@ To change the default loader image, pass the prop `loader-image` which must be a
 
 You can specify the type of button via type prop be it, `button`, `reset`, `submit`. `type="button"` will be the default behaviour if not provided.
 
-### Events
+### Event Listeners
 
 You can use all the button listener events on the Vuetton component and pass on the methods.
 ```vue
