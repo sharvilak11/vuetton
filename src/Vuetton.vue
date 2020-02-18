@@ -85,7 +85,8 @@ export default {
                 } catch(e) {
                     this.isLoading = false;
                 }
-                this.$refs.button.style.width = oldWidth;
+                if (this.$refs.button)
+                    this.$refs.button.style.width = oldWidth;
             } else {
                 this.action();
             }
