@@ -12,6 +12,7 @@
       loader-image="@/assets/loader.svg"
       @mouseover="toggleOn"
       @mouseout="toggleOff"
+      :ripple="true"
     >
       <i class="material-icons">submit</i>
     </Vuetton>
@@ -34,7 +35,7 @@ export default {
 
     },
     toggleOff() {
-
+      
     }
   }
 }

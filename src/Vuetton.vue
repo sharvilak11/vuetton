@@ -1,7 +1,8 @@
 <template>
-    <button :type="type" class="btn" :class="['btn-'+size, customClass, isLoading ? 'btn-loader': '']"
+    <button :type="type" class="btn" :class="['btn-'+size, customClass, isLoading ? 'btn-loader': '', {'ripple': ripple}]"
             :disabled="isLoading || disabled"
             @click="callAction"
+            v-on="$listeners"
             :style="backgroundColor"
             ref="button"
     >
@@ -43,6 +44,10 @@ export default {
         loaderImage: {
             type: String
         },
+        ripple: {
+            type: Boolean,
+            default: false
+        },
         size: {
             type: String,
             validator: (value) => {
@@ -67,6 +72,9 @@ export default {
     },
     methods: {
         async callAction() {
+            if (!this.action) {
+                return false;
+            }
             if (this.async) {
                 let oldWidth = this.$refs.button.style.width;
                 this.$refs.button.style.width = this.$refs.button.offsetWidth + 'px';
@@ -77,11 +85,24 @@ export default {
                 } catch(e) {
                     this.isLoading = false;
                 }
-                this.$refs.button.style.width = oldWidth;
+                if (this.$refs.button)
+                    this.$refs.button.style.width = oldWidth;
             } else {
                 this.action();
             }
         }
+    },
+    created() {
+        this.$set(this.actions, 'click', () => {
+            return new Promise(async (resolve, reject)=> {
+                try {
+                    await this.action();
+                    resolve();
+                } catch (err) {
+                    return reject(err);
+                }
+            });
+        });
     },
     computed: {
         backgroundColor() {
@@ -98,18 +119,6 @@ export default {
             }
             return require('./assets/loader.svg');
         }
-    },
-    created() {
-        this.$set(this.actions, 'click', () => {
-            return new Promise(async (resolve, reject)=> {
-                try {
-                    await this.action();
-                    resolve();
-                } catch (err) {
-                    return reject(err);
-                }
-            });
-        });
     }
 };
 </script>
@@ -178,5 +187,17 @@ export default {
     .btn:disabled {
         cursor: not-allowed !important;
         opacity: 0.5;
+    }
+    .ripple {
+        background-position: center;
+        transition: background 0.8s;
+    }
+    .ripple:hover {
+        background: white radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%) center/15000%;
+    }
+    .ripple:active {
+        opacity: 0.7;
+        background-size: 100%;
+        transition: background 0s;
     }
 </style>
