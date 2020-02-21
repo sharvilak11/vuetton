@@ -1,6 +1,20 @@
 <template>
   <div id="app">
-    <Vuetton text="Sample" custom-class="primary" hover-class="primary-hover"></Vuetton>
+    <Vuetton 
+      text="Submit Data" 
+      type="submit"
+      size="sm"
+      custom-class="primary" 
+      hover-class="primary-hover" 
+      :action="callApi"
+      :async="true"
+      loader-text="Loading..."
+      loader-image="@/assets/loader.svg"
+      @mouseover="toggleOn"
+      @mouseout="toggleOff"
+    >
+      <i class="material-icons">submit</i>
+    </Vuetton>
   </div>
 </template>
 
@@ -11,6 +25,17 @@ export default {
   name: 'app',
   components: {
     Vuetton,
+  },
+  methods: {
+    callApi(){
+      window.alert('Helloooooo');
+    },
+    toggleOn() {
+
+    },
+    toggleOff() {
+
+    }
   }
 }
 </script>
