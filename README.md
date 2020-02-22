@@ -94,5 +94,24 @@ Default slot takes elements or anything which will be rendered on the button bef
 </Vuetton>
 ```
 
+### Full Example
+```vue
+    <Vuetton 
+      text="Submit Data" 
+      type="submit"
+      size="sm"
+      custom-class="primary" 
+      hover-class="primary-hover" 
+      :action="callApi"
+      :async="true"
+      loader-text="Loading..."
+      loader-image="@/assets/loader.svg"
+      @mouseover="toggleOn"
+      @mouseout="toggleOff"
+    >
+      <i class="material-icons">submit</i>
+    </Vuetton>
+```
+
 * More Features are coming soon
 * Documentation link is coming soon 
