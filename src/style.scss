@@ -1,0 +1,90 @@
+.vtn {
+  color: #000;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: none;
+  outline: 0 !important;
+  min-width: 80px;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  &.vtn-loader {
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    .loader {
+      margin: auto 8px auto 0;
+      height: 100%;
+    }
+  }
+  .icon {
+    margin-right: 8px;
+  }
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+  }
+  .icon-right {
+    .icon {
+        margin-left: 8px;
+        margin-right: auto;
+    }
+    .loader {
+      margin-right: auto;
+      margin-left: 8px;
+    }
+  }
+  .icon-left, .icon-right {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+.vtn-xs {
+  padding: 4px 8px;
+  min-width: 72px;
+  font-size: 12px;
+  height: 24px;
+  .loader {
+    width: 12px;
+  }
+}
+.vtn-sm {
+  padding: 8px 12px;
+  font-size: 14px;
+  height: 32px;
+  .loader {
+    width: 16px;
+  }
+}
+.vtn-md {
+  font-size: 16px;
+  min-width: 100px;
+  padding: 8px 24px;
+  height: 40px;
+  .loader {
+    width: 20px;
+    height: 20px;
+  }
+}
+.vtn-lg {
+  font-size: 18px;
+  min-width: 120px;
+  padding: 16px 32px;
+  height: 54px;
+  .loader {
+    height: 100%;
+    width: 27px;
+  }
+}
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+  &:hover {
+    background: white radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%) center/15000%;
+  }
+  &:active {
+    opacity: 0.7;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
