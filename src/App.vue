@@ -1,47 +1,59 @@
 <template>
   <div id="app">
-    <Vuetton 
-      text="Submit Data" 
+    <Vuetton
+      text="Submit Data"
       type="submit"
-      size="sm"
-      custom-class="primary" 
-      hover-class="primary-hover" 
+      size="lg"
+      custom-class="primary"
+      hover-class="primary-hover"
       :action="callApi"
-      :async="true"
       loader-text="Loading..."
-      loader-image="@/assets/loader.svg"
+      color="#d21211"
       @mouseover="toggleOn"
       @mouseout="toggleOff"
       :ripple="true"
+      align-icon="right"
     >
-      <i class="material-icons">submit</i>
+      <i class="material-icons">save</i>
     </Vuetton>
+    <div v-show="isToggle">
+      <p>Toggle is on</p>
+    </div>
   </div>
 </template>
 
 <script>
 import Vuetton from './Vuetton';
+import axios from 'axios';
 
 export default {
   name: 'app',
   components: {
     Vuetton,
   },
+  data() {
+    return {
+      isToggle: false,
+      task: null
+    }
+  },
   methods: {
-    callApi(){
-      window.alert('Helloooooo');
+    async callApi(){
+      let result = await axios.get('https://jsonplaceholder.typicode.com/todos/2');
+      this.task = result.data;
     },
     toggleOn() {
-
+      this.isToggle = true;
     },
     toggleOff() {
-      
+      this.isToggle = false;
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import './style';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -56,4 +68,10 @@ export default {
 .primary-hover {
   background-color: #ccc;
 }
+i {
+  font-size: 14px !important;
+}
+  .vtn {
+    color: #fff;
+  }
 </style>

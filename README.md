@@ -16,16 +16,18 @@ Below are the options which can be used in order to customise the button as per 
 | Property | Type | Description |
 |---------|--------|-------------|
 |action | `Function` | This is a required property which accepts the reference of a function.|
+|align-icon | `String` | Icon's slot can be aligned by either `left` or `right`. Default is set to `left`|
 |async | `Boolean` | When ```async``` is true, the button will be disabled while still showing the loading icon until promise wrapped around the action is resolved. 
 |color | `String` | This property determines the ```background-color``` of button.|
 |custom-class | `String` | This property assigns additional custom class to the button component.|
 |disabled | `Boolean` | If this property is true, then the particular button will be disabled.| 
 |loader-text|`String`| This property accepts text which will be loaded during an asynchronous call.|
 |loader-image|`String`| This property accepts path of an image which will be loaded during an asynchronous call.|
+|ripple|`Boolean`| This property adds a ripple effect on clicking on the button.|
 |size|`String`| This property determines the size of a button; possible values taken are ```lg```,```md```, ```sm``` and ```xs```. If not provided, default size i.e medium is rendered.|
+|stop|`Boolean`| This property doesn't let the click event propogate to its parent. This works similar to how `.stop` modifier works in vue.|
 |text|`String`| This is a required property which defines a value.|  
 |type|`String`| This property determines the usage of button; possible values used are ```submit```,```button``` ```reset```.|
-|ripple|`Boolean`| This property adds a ripple effect on clicking on the button.|
 
 ## Events
 - Use any event directly on the component and the same will be propogated to the actual button.
@@ -89,7 +91,7 @@ You can use all the button listener events on the Vuetton component and pass on 
 Default slot takes elements or anything which will be rendered on the button before the button's text.
 
 ```vue
-<Vuetton size="md" text="Submit" @mouseover="doSomething" @blur="removeSomething">
+<Vuetton size="md" text="Submit" @mouseover="doSomething" @blur="removeSomething" align-icon="right">
     <i class="material-icons">save</i>
 </Vuetton>
 ```
@@ -101,7 +103,6 @@ Default slot takes elements or anything which will be rendered on the button bef
       type="submit"
       size="sm"
       custom-class="primary" 
-      hover-class="primary-hover" 
       :action="callApi"
       :async="true"
       loader-text="Loading..."
