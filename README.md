@@ -23,7 +23,7 @@ Below are the options which can be used in order to customise the button as per 
 |disabled | `Boolean` | If this property is true, then the particular button will be disabled.| 
 |loader-text|`String`| This property accepts text which will be loaded during an asynchronous call.|
 |loader-image|`String`| This property accepts path of an image which will be loaded during an asynchronous call.|
-|ripple|`Boolean`| This property adds a ripple effect on clicking on the button.|
+|ripple | This property adds a ripple effect on clicking on the button.|
 |size|`String`| This property determines the size of a button; possible values taken are ```lg```,```md```, ```sm``` and ```xs```. If not provided, default size i.e medium is rendered.|
 |stop|`Boolean`| This property doesn't let the click event propogate to its parent. This works similar to how `.stop` modifier works in vue.|
 |text|`String`| This is a required property which defines a value.|  
@@ -106,13 +106,13 @@ Default slot takes elements or anything which will be rendered on the button bef
       :action="callApi"
       :async="true"
       loader-text="Loading..."
-      loader-image="@/assets/loader.svg"
+      loader-image="https://example.com/loader.svg"
       @mouseover="toggleOn"
       @mouseout="toggleOff"
+      ripple
     >
       <i class="material-icons">submit</i>
     </Vuetton>
 ```
 
-* More Features are coming soon
 * Documentation link is coming soon 

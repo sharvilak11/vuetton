@@ -1,5 +1,5 @@
 <template>
-    <button :type="type" class="vtn" :class="['vtn-'+size, customClass, isLoading ? 'vtn-loader': '', {'ripple': ripple}]"
+    <button :type="type" class="vtn" :class="['vtn-'+size, customClass, isLoading ? 'vtn-loader': '', {'ripple': $attrs.hasOwnProperty('ripple')}]"
             :disabled="isLoading || disabled"
             @click="callAction"
             v-on="$listeners"
@@ -56,10 +56,6 @@ export default {
         },
         loaderImage: {
             type: String
-        },
-        ripple: {
-            type: Boolean,
-            default: false
         },
         size: {
             type: String,
