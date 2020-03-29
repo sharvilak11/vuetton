@@ -5,13 +5,12 @@
       type="submit"
       size="lg"
       custom-class="primary"
-      hover-class="primary-hover"
       :action="callApi"
       loader-text="Loading..."
       color="#d21211"
       @mouseover="toggleOn"
       @mouseout="toggleOff"
-      :ripple="true"
+      ripple
       align-icon="right"
     >
       <i class="material-icons">save</i>
