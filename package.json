@@ -1,6 +1,6 @@
 {
   "name": "vuetton",
-  "version": "0.1.2a",
+  "version": "0.1.2b",
   "main": "src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",

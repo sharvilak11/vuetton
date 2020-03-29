@@ -136,7 +136,7 @@ export default {
         },
         loaderImageUrl() {
             if (this.loaderImage) {
-                return require(this.loaderImage);
+                return this.loaderImage;
             }
             return require('./assets/loader.svg');
         }
