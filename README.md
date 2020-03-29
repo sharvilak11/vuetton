@@ -1,4 +1,4 @@
-# Vuetton
+# Vuetton [![Build Status](https://travis-ci.org/sharvilak11/vuetton.svg?branch=master)](https://travis-ci.org/sharvilak11/vuetton)
 
 Vuetton is a simple library which lets you configure your button in the most feasible way. It supports click events, asynchronous operations, icons, loaders, custom classes etc.
 
