@@ -3,6 +3,7 @@
             :disabled="isLoading || disabled"
             @click="callAction"
             v-on="$listeners"
+            v-bind="$attrs"
             :style="backgroundColor"
             ref="button"
     >
