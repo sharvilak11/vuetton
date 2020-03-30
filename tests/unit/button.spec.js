@@ -138,5 +138,20 @@ describe('Vuetton.vue', () => {
     expect(wrapper.vm.$props.action).toHaveBeenCalled();
   });
 
+  it('should display the attributes like id, aria-expanded etc passed in attrs', () => {
+    wrapper = shallowMount(Vuetton, {
+      propsData: {
+        text: 'Click Me'
+      },
+      attrs: {
+        'id': 'firstBtn',
+        'aria-expanded': 'false'
+      }
+    });
+    Vue.nextTick();
+    expect(wrapper.attributes('id')).toBe('firstBtn');
+    expect(wrapper.attributes('aria-expanded')).toBe('false');
+  });
+
   // TODO : tests for async, loaderText, loaderImage
 });

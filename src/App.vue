@@ -5,6 +5,7 @@
       type="submit"
       size="lg"
       custom-class="primary"
+      :async="true"
       :action="callApi"
       loader-text="Loading..."
       color="#d21211"
@@ -12,6 +13,8 @@
       @mouseout="toggleOff"
       ripple
       align-icon="right"
+      id="1"
+      aria-expanded="false"
     >
       <i class="material-icons">save</i>
     </Vuetton>

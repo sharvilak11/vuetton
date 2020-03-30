@@ -23,7 +23,7 @@ Below are the options which can be used in order to customise the button as per 
 |disabled | `Boolean` | If this property is true, then the particular button will be disabled.| 
 |loader-text|`String`| This property accepts text which will be loaded during an asynchronous call.|
 |loader-image|`String`| This property accepts path of an image which will be loaded during an asynchronous call.|
-|ripple | This property adds a ripple effect on clicking on the button.|
+|ripple | | This property adds a ripple effect on clicking on the button.|
 |size|`String`| This property determines the size of a button; possible values taken are ```lg```,```md```, ```sm``` and ```xs```. If not provided, default size i.e medium is rendered.|
 |stop|`Boolean`| This property doesn't let the click event propogate to its parent. This works similar to how `.stop` modifier works in vue.|
 |text|`String`| This is a required property which defines a value.|  
@@ -33,6 +33,8 @@ Below are the options which can be used in order to customise the button as per 
 - Use any event directly on the component and the same will be propogated to the actual button.
 - Special case in terms of `:async=true` - where `action` prop is mandatory which will be called on `click` event in order to show the loading animation and track the asynchronous call. 
 
+## Attributes
+- Attributes can be passed normally to the component and all the attributes gets copied to actual button. This is particularly useful to add **accessibility attributes, id, name** etc.
 
 ## Usage
 
@@ -110,6 +112,8 @@ Default slot takes elements or anything which will be rendered on the button bef
       @mouseover="toggleOn"
       @mouseout="toggleOff"
       ripple
+      id="btnSubmit"
+      aria-expanded="false"
     >
       <i class="material-icons">submit</i>
     </Vuetton>
